@@ -1,4 +1,5 @@
 NAME		= 	push_swap
+BNAME		=	checker
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 SRCS		=	push_swap.c \
@@ -25,9 +26,34 @@ SRCS		=	push_swap.c \
 				utils/ft_strchr.c\
 				utils/ft_strlen.c\
 
+BSRCS		=	bonus/index.c\
+				bonus/operations_push.c\
+				bonus/lst_add_back.c\
+				bonus/operations_rr.c\
+				bonus/error_exit.c\
+				bonus/lst_clear.c\
+				bonus/operations_rrr.c\
+				bonus/ft_atoi.c\
+				bonus/lst_free.c\
+				bonus/operations_ss.c\
+				bonus/ft_split.c\
+				bonus/lst_last.c\
+				bonus/operations_st.c\
+				bonus/ft_strchr.c\
+				bonus/lst_new.c\
+				bonus/parser.c\
+				bonus/ft_strlen.c\
+				bonus/lst_size.c\
+				bonus/get_next_line.c\
+				bonus/main.c
+
 OBJ			=	$(SRCS:%.c=%.o)
 
+BOBJ		=	$(BSRCS:%.c=%.o)
+
 INCLUDES	=	push_swap.h
+
+BINCLUDES	=	bonus/checker.h
 
 .o: .c
 	$(CC) $(CFLAGS)	$< -o $@ 
@@ -37,15 +63,18 @@ all: $(NAME)
 
 $(NAME): $(OBJ) push_swap.h
 		 @$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+		
+bonus: $(BNAME)
 
-%.o : %.c $(INCLUDES)
-						$(CC) $(CFLAGS) -c $< -I $(INCLUDES) -o $(<:.c=.o)
+$(BNAME): $(BOBJ) bonus/checker.h
+			$(CC) $(CFLAGS) $(BOBJ) -o $(BNAME)
+
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(BOBJ)
 	@echo "Make clean done"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BNAME)
 	@echo "Make fclean done"
 
 re: fclean all
@@ -53,4 +82,4 @@ re: fclean all
 norm:
 	norminette 
  
- .PHONY: all re clean fclean norm
+.PHONY: all re clean fclean norm bonus

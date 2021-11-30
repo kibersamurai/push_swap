@@ -6,11 +6,11 @@
 /*   By: bprovolo <bprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 21:47:58 by bprovolo          #+#    #+#             */
-/*   Updated: 2021/11/28 19:42:42 by bprovolo         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:19:39 by bprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static void	*ft_free(char **split, int words)
 {

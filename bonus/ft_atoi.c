@@ -6,11 +6,11 @@
 /*   By: bprovolo <bprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 17:59:59 by bprovolo          #+#    #+#             */
-/*   Updated: 2021/11/23 19:53:05 by bprovolo         ###   ########.fr       */
+/*   Updated: 2021/11/23 22:01:50 by bprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker.h"
 
 int	is_space(char s)
 
